@@ -17,25 +17,11 @@
         }else{
             $sql = "INSERT INTO users (`email`, `password`) VALUES('".$myusername."', '".$mypassword."')";
             $result = mysqli_query($link,$sql);
-            echo "CHECK";
+            $error = '<div class="alert alert-success" role="alert"><strong>Registered Sucessfully!</strong></div>';
+
+            $loginBtn = '<a href="index.php" class="btn btn-primary btn-block active" role="button" aria-pressed="true">Home</a>';
         }
-
-
-   
-        
-
     }
-
-
-
-
-
-                              
-
-
-    
-
-
 
 ?>
 
@@ -101,6 +87,7 @@
             text-align: center; 
         }
         
+        
 
     </style>
     <body>
@@ -121,9 +108,10 @@
                 <div class="form-group" id="registerbtn">
                     <button class="btn btn-info btn-block" type="submit" >Register</button>
                 </div>
-                <div id="error"><? echo $error; ?>
-
+                <div id="error"><? echo $error.$loginBtn; ?>
                 </div>
+
+               
 
                 
             </form>
@@ -161,8 +149,8 @@
             if(error!=""){
                 $("#error").html('<div class="alert alert-danger" role="alert"><p><strong>There were errors!</strong></p>'+ error + '</div>');
             }else{
-                $("#error").html('<div class="alert alert-success" role="alert"><strong>Registered Sucessfully!</strong></div>');
                 $("form").unbind("submit").submit();
+                
             }
             
             
