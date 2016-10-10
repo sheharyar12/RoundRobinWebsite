@@ -1,6 +1,6 @@
 <?php 
 
-    $link = mysqli_connect("localhost","cl18-users-qyp","EDs-6tV-.","cl18-users-qyp");
+    $link = mysqli_connect("localhost","cl18-users-qyp","","cl18-users-qyp");
 
 
     if(mysqli_connect_error()){
