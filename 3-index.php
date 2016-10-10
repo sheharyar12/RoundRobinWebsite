@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    $link = mysqli_connect("localhost", "cl18-users-qyp", "EDs-6tV-.", "cl18-users-qyp");
+    $link = mysqli_connect("localhost", "cl18-users-qyp", "", "cl18-users-qyp");
     
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
